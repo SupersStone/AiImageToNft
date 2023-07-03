@@ -1,6 +1,10 @@
 # AiImageToNft
 ai generate image output NFT
 
+Link:
+- Prompt Generate Images : https://omniinfer.io/
+- Image Upload IPFS : https://nft.storage/
+
 
 
 #### Api 
