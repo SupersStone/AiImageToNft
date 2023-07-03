@@ -8,6 +8,8 @@ ai generate image output NFT
 - 请求方法：`GET`
 - 请求地址：`/api/v1/prompt`
 - 请求参数：`prompt` 生成图片的文字描述
+  - 请求示例：
+    - `127.0.0.1:8000/api/v1/prompt?prompt=dog`
 - 返回参数：`task_id` 图片id
 
 ```json
@@ -24,7 +26,9 @@ ai generate image output NFT
 ##### 2. 根据task_id 获取图片链接
 - 请求方法：`GET`
 - 请求地址：`/api/v1/task_id`
-- 请求参数：`task_id` 生成图片的图片id
+- 请求参数：`task_id` 生成图片的图片id 
+  - 请求示例：
+    - `127.0.0.1:8000/api/v1/task_id?task_id=429c4a5a-b094-4648-be5d-53b5f3d6b1f5`
 - 返回参数：`image_url` 图片的aws3存储链接
 
 ```json
