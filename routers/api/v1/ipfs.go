@@ -115,6 +115,10 @@ func UploadToIpfs(c *gin.Context) {
 	}
 	fileName := image.Filename
 	cid, err := UploadImageToIpfs(dstFile.Name(), fileName)
+	if err != nil {
+		appG.Response(http.StatusInternalServerError, e.ERROR_UploadImageToIpfs, nil)
+		return
+	}
 
 	ImagePathUrl := "https://" + string(cid) + ".ipfs.nftstorage.link/" + string(fileName)
 	appG.Response(http.StatusOK, e.SUCCESS, map[string]interface{}{

@@ -12,7 +12,6 @@ import (
 	"strings"
 )
 
-// 根据prompt生成图片
 func PromptToImage(prompt string) (string, error) {
 	payload := fmt.Sprintf("{\"prompt\": \"%s\",\"negative_prompt\":\"watermark, facial distortion, lip deformity, redundant background, extra fingers, Abnormal eyesight, ((multiple faces)), ((Tongue protruding)), ((extra arm)), extra hands, extra fingers, deformity, missing legs, missing toes, missin hand, missin fingers, (painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy\",\"sampler_name\":\"Euler a\",\"batch_size\":1,\"n_iter\":1,\"steps\":20,\"cfg_scale\":7,\"seed\":-1,\"height\":512,\"width\":512,\"model_name\":\"AnythingV5_v5PrtRE.safetensors\"}", prompt)
 	newPayload := strings.NewReader(payload)

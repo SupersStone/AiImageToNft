@@ -60,3 +60,22 @@ Link:
   }
 }
 ```
+
+
+##### 4. prompt 生成图片并上传到IPFS（接口整合）
+- 请求方法：`GET`
+- 请求地址：`/api/v1/prompttonft`
+- 请求参数：`prompt` 生成图片的文字描述
+  - 请求示例：
+    - `127.0.0.1:8000/api/v1/prompttonft?prompt=dog`
+- 返回参数：`image_url` 图片的IPFS链接地址
+
+```json
+{
+  "code": 200,
+  "msg": "ok",
+  "data": {
+    "image_url": "https://bafybeicbivtgneo3vov3gjmod7eix3ioyqgpquphicqcwtnug53wr7juey.ipfs.nftstorage.link/dog"
+  }
+}
+```

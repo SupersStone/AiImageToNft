@@ -5,16 +5,13 @@ import (
 	"AiImageToNft/pkg/e"
 	"AiImageToNft/pkg/setting"
 	"encoding/json"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"io"
 	"net/http"
 )
 
-// 根据imageTaskId 获取图片链接
 func GetNftUrl(taskId string) (string, error) {
 	url := setting.AppSetting.PromptDownload + taskId
-	fmt.Println("url is :", url)
 
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
@@ -32,12 +29,10 @@ func GetNftUrl(taskId string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	fmt.Println(string(body))
 
 	// get image url
 	var dataImage ImagePromptResult
 	if err := json.Unmarshal(body, &dataImage); err == nil {
-		fmt.Println("dataImage is：", dataImage)
 		return dataImage.Data.Imgs[0], nil
 	} else {
 		return "", err
@@ -52,7 +47,6 @@ func GetImageAws3Url(c *gin.Context) {
 		return
 	}
 
-	// 2. 获取图片路径
 	imageUrl, err := GetNftUrl(imageTaskId)
 	if err != nil {
 		appG.Response(http.StatusInternalServerError, e.ERROR_GetImageUrl, nil)
