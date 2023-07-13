@@ -19,6 +19,8 @@ func InitRouter() *gin.Engine {
 		apiv1.GET("/task_id", v1.GetImageAws3Url)
 		// 上传图片到IPFS
 		apiv1.POST("/nft", v1.UploadToIpfs)
+		// 上传图片到IPFS(根据图片链接上传到IPFS)
+		apiv1.GET("/nft", v1.ImageUrlToIpfs)
 
 		// 整合以上三个接口
 		apiv1.GET("/prompttonft", v1.PromptToNft)

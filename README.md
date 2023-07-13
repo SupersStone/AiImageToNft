@@ -79,3 +79,21 @@ Link:
   }
 }
 ```
+
+##### 5. 根据图片链接上传到IPFS（新增）
+- 请求方法：`GET`
+- 请求地址：`/api/v1/nft`
+- 请求参数：`image_url` 生成图片的文字描述
+  - 请求示例：
+    - `127.0.0.1:8000/api/v1/nft?image_url=https://stars-test.s3.amazonaws.com/free-prod/c8683e80-780e-43dd-aa58-b824c576b705-0.png`
+- 返回参数：`image_url` 图片的IPFS链接地址
+
+```json
+{
+  "code": 200,
+  "msg": "ok",
+  "data": {
+    "image_url": "https://bafybeifrwu3aiica2dzyekhazvehfsn5mz5hsajtxk5asujsnm5dfnpz2i.ipfs.nftstorage.link/c8683e80-780e-43dd-aa58-b824c576b705-0.png"
+  }
+}
+```
